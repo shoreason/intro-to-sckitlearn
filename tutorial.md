@@ -14,8 +14,10 @@ from sklearn.metrics import mean_squared_error, r2_score
 ```
 --
 
-```python
+
 ## Load the diabetes dataset
+
+```python
 diabetes = datasets.load_diabetes()
 ```
 ---
@@ -25,14 +27,6 @@ diabetes = datasets.load_diabetes()
 ```python
 diabetes_X = diabetes.data[:, np.newaxis, 2]
 ```
---
-
-```python
-## Split the data into training/testing sets
-diabetes_X_train = diabetes_X[:-20]
-diabetes_X_test = diabetes_X[-20:]
-```
-
 --
 
 ## Split the targets into training/testing sets
@@ -50,7 +44,7 @@ diabetes_y_test = diabetes.target[-20:]
 regr = linear_model.LinearRegression()
 ```
 
---
+---
 
 ## Train the model using the training sets
 
@@ -66,7 +60,7 @@ regr.fit(diabetes_X_train, diabetes_y_train)
 diabetes_y_pred = regr.predict(diabetes_X_test)
 ```
 
---
+---
 
 ## The coefficients
 
@@ -91,7 +85,7 @@ print("Mean squared error: %.2f"
 print('Variance score: %.2f' % r2_score(diabetes_y_test, diabetes_y_pred))
 ```
 
---
+---
 
 ## Plot outputs
 
